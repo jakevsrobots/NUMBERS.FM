@@ -2,10 +2,12 @@ import os, commands
 from flask import Flask, render_template, request, session, url_for, \
     redirect
 from auth import session_key_required
+from werkzeug.contrib.fixers import ProxyFix
 
 
 app = Flask(__name__)
 app.config.from_object('settings')
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 # ---------------------
 # Utils
@@ -53,14 +55,13 @@ def login():
                 request.form['password'] == app.config['ADMIN_PASSWORD']:
             session['admin_logged_in'] = True
             if request.form.get('from'):
-                return redirect(request.form['from'])
+                return redirect(request.form['from'], _external=True)
             else:
-                return redirect('/secrets')
+                return redirect('/secrets', _external=True)
         else:
             error = "Invalid credentials"
 
     return render_template('login.html', error=error)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=9000, debug=True)
-
+    app.run()
