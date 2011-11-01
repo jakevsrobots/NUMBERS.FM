@@ -16,7 +16,14 @@ class PlaylistManager(object):
             
         return cls._manager
     
-    def __init__(self, archive_base_dir='/opt/mp3/', num_tracks_to_count=10):
+    def __init__(self, archive_base_dir=None, num_tracks_to_count=10):
+        if archive_base_dir is None:
+            if "RADIO_ARCHIVES_PATH" in os.environ:
+                archive_base_dir = os.environ['RADIO_ARCHIVES_PATH']
+            else:
+                # a sensible default?
+                archive_base_dir = '/opt/mp3'
+
         self.archive_base_dir = archive_base_dir
         self.num_tracks_to_count = num_tracks_to_count
         self.recently_played_tracks = []
@@ -50,8 +57,6 @@ class PlaylistManager(object):
         return os.path.join(self.archive_base_dir, track)
 
     def get_metadata(self):
-        # {'album': [u'The Conet Project'], 'artist': [u'The Conet Project'], 'title': [u'tcp d4 43 m3b irdial'], 'genre': [u'Other', u'{unknown}'], 'length': [u'49000'], 'date': [u'1997'], 'tracknumber': [u'4']}
-
         if self.now_playing:
             data = EasyID3(self.now_playing)
             return '%s -- %s [NUMBERS.FM archive stream]' % (data['artist'][0], data['title'][0])
