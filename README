@@ -1,9 +1,11 @@
 Code that powers the Numbers.FM internet radio station.
 
+Most or all of this code will be in Python and bash. Web applications are built using the Flask microframework (http://flask.pocoo.org/).
+
 Current Inventory (as of 2011-10-31):
 
 /site/
-  /secrets/ -- The "control panel" web app for managing the station status.
+  /secrets/ -- The "control panel" web app for managing the station status (a Flask app).
 
 /tools/
   ices_shuffle_playlist.py -- A simple playlist module for ices0 which randomly plays files in a folder.
