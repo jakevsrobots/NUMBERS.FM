@@ -14,7 +14,7 @@ def session_key_required(session_key_name, session_value=True,
         @wraps(fn)
         def decorated_view(*args, **kwargs):
             if session.get(session_key_name) != session_value:
-                return redirect(failure_url, _external=True)
+                return redirect(failure_url)
             return fn(*args, **kwargs)
         return decorated_view
     return inner_func
