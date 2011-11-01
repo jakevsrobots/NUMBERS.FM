@@ -1,1 +1,9 @@
 Code that powers the Numbers.FM internet radio station.
+
+Current Inventory (as of 2011-10-31):
+
+/site/
+  /secrets/ -- The "control panel" web app for managing the station status.
+
+/tools/
+  ices_shuffle_playlist.py -- A simple playlist module for ices0 which randomly plays files in a folder.
