@@ -34,8 +34,8 @@ def archive_stream_is_running():
 # Views
 # ---------------------    
     
-@app.route("/secrets/stream", methods=['POST', 'GET'])
-@session_key_required('admin_logged_in', True, '/secrets/login')
+@app.route("/secrets/stream/", methods=['POST', 'GET'])
+@session_key_required('admin_logged_in', True, '/secrets/login/')
 def stream_index():
     if request.method == 'POST':
         archive_action = request.form['archive-action']
@@ -47,21 +47,26 @@ def stream_index():
     return render_template('stream_control.html',
                            archives_playing=archive_stream_is_running())
 
-@app.route("/secrets/login", methods=["GET", "POST"])
+@app.route("/secrets/login/", methods=["GET", "POST"])
 def login():
     error = None
     if request.method == 'POST':
+        session.pop('admin_logged_in', None)
         if request.form['username'] == 'admin' and \
                 request.form['password'] == app.config['ADMIN_PASSWORD']:
             session['admin_logged_in'] = True
             if request.form.get('from'):
-                return redirect(request.form['from'], _external=True)
+                return redirect(request.form['from'])
             else:
-                return redirect('/secrets', _external=True)
+                return redirect('/secrets/stream/')
         else:
             error = "Invalid credentials"
 
     return render_template('login.html', error=error)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', debug=True)
