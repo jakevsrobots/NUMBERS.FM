@@ -57,11 +57,15 @@ class PlaylistManager(object):
         return os.path.join(self.archive_base_dir, track)
 
     def get_metadata(self):
+        print "get metadata"
         if self.now_playing:
             data = EasyID3(self.now_playing)
-            return '%s -- %s [NUMBERS.FM archive stream]' % (data['artist'][0], data['title'][0])
+            metadata = '%s -- %s [NUMBERS.FM archive stream]' % (data['artist'][0], data['title'][0])
         else:
-            return 'NUMBERS.FM'
+            metadata = 'NUMBERS.FM'
+
+        print "md", metadata
+        return metadata
 
 # ----------------------
 # Ices hooks
