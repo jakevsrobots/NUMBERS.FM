@@ -1,0 +1,257 @@
+[
+    {
+        "pk": 17, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Alex Inglizian", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "alex-inglizian"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Brian Labycz", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "brian-labycz"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Camilla Ha", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "camilla-ha"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Cole Pierce", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "cole-pierce"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "ENEMY", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "enemy"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Entro MC", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "entro-mc"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "erica gressman", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "erica-gressman"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Julia Miller", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "julia-miller"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "LAMPO", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "lampo"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Lee Blalock", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "lee-blalock"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "LORI FELKER", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "lori-felker"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Mark Booth", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "mark-booth"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Nicholas Davis", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "nicholas-davis"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Ryan T. Dunn", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "ryan-t-dunn"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Sarah Weis", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "sarah-weis"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "Shawn Decker", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "shawn-decker"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "radio.show", 
+        "fields": {
+            "detail_page_image": null, 
+            "name": "stasisfield", 
+            "image": "", 
+            "is_active": true, 
+            "schedule_type": 1, 
+            "full_description": "", 
+            "thumb_image": null, 
+            "short_description": "", 
+            "slug": "stasisfield"
+        }
+    }
+]

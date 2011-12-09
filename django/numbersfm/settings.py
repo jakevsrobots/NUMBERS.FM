@@ -116,7 +116,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'south',
-    'undermythumb'
+    'undermythumb',
+
+    'core',
+    'radio'
 )
 
 # A sample logging configuration. The only tangible logging

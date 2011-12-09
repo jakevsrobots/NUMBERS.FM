@@ -1,0 +1,7 @@
+<ul class="show-list">
+    {% for show in shows %}
+    <li>
+        <a href="{{ show.get_absolute_url }}">{{ show.name }}</a>
+    </li>
+    {% endfor %}
+</ul>

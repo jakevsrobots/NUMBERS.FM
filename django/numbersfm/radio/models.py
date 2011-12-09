@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from undermythumb.fields import ImageWithThumbnailsField, ImageFallbackField
 from undermythumb.renderers import CropRenderer
+from numbersfm.utils.managers import ActiveManager
 
 
 SHOW_SCHEDULE_TYPES = (
@@ -10,7 +11,7 @@ SHOW_SCHEDULE_TYPES = (
 )
 
 class Show(models.Model):
-    users = models.ManyToManyField(User, help_text='Users who may edit info about this show.')
+    is_active = models.BooleanField(default=True, help_text="If this box is not checked, the show will not appear on the site.")
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     schedule_type = models.PositiveIntegerField(choices=SHOW_SCHEDULE_TYPES)
@@ -29,5 +30,10 @@ class Show(models.Model):
                                            upload_to='shows/',
                                            help_text='Optional override for thumbnail image crop. 240x240')
 
+    objects = ActiveManager()
+
+    class Meta:
+        ordering = ('name',)
+    
     def __unicode__(self):
         return self.name

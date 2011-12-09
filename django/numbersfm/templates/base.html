@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}NUMBERS.FM{% endblock %}</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-2460919-21']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </head>
+    <body>
+
+        <div id="header-container">
+            <div id="header">
+                <div id="header-left">
+	                <div class="block">
+                        <div id="listen">
+                            <a href="http://numbers.fm/numbersfm.pls">LISTEN: NOW</a>
+
+                            <div id="ffmp3">
+                                <!-- BEGINS: AUTO-GENERATED FFMP3 CODE -->
+                                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="220" height="21" bgcolor="#FFFFFF">
+                                    <param name="movie" value="/ffmp3/ffmp3.swf" />
+                                    <param name="flashvars" value="url=http://numbers.fm:8000/listen&lang=en&codec=mp3&volume=100&traking=true&jsevents=true&buffering=5&title=NUMBERS.FM" />
+                                    <param name="wmode" value="window" />
+                                    <param name="allowscriptaccess" value="always" />
+                                    <param name="scale" value="noscale" />
+                                    <embed src="/ffmp3/ffmp3.swf" flashvars="url=http://numbers.fm:8000/listen&lang=en&codec=mp3&volume=100&traking=true&jsevents=true&buffering=5&title=NUMBERS.FM" width="220" scale="noscale" height="21" wmode="window" bgcolor="#FFFFFF" allowscriptaccess="always" type="application/x-shockwave-flash" />
+                                </object>
+                                <!-- ENDS: AUTO-GENERATED FFMP3 CODE -->
+                            </div>
+                            <div id="now-playing">
+                                <!--
+                                    Wednesday December 7th:
+                                    <br />                 
+                                    <strong>8:07pm - 10:09pm:</strong> Cole Pierce
+                                    -->
+                            </div>
+                        </div>
+	                </div>
+                </div>
+                <div id="header-right">
+	                <img src="{{ STATIC_URL }}img/numbersfm-white.png" id="logo" />
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div id="nav-container">
+            <div id="wires-container">
+	            <img src="{{ STATIC_URL }}img/WIRES_002.gif" id="wires" />
+            </div>
+
+            <div id="nav">
+	            <div id="nav-content">
+	                <a href="#">Schedule</a>
+	                <a href="#">How to Listen</a>
+	            </div>
+            </div>
+            
+        </div>
+
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div id="footer">
+            <div id="footer-content">
+	            <span class="copy-it-right">&copy;</span> Copy-it-right 0AD &mdash; 2012AD
+            </div>
+        </div>
+    </body>
+</html>
