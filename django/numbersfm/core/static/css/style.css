@@ -3,8 +3,8 @@ body, html { margin: 0; padding: 0; color: #444;
              font-size: 100%: }
 h1, h2, h3, h4 { color: #000; font-family: sans-serif; font-variant: small-caps;
                  font-weight: bold; margin-bottom: 0.5em; }
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.2em; }
 h3, h4 { font-size: 1em; }
 h4 { font-weight: normal; }
 body { font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif;
@@ -15,17 +15,15 @@ p { margin-bottom: 2em; }
 a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 
 /* Layout */
-#content, #header, #wires-container,
-#footer-content, #nav-content { width: 960px; margin: auto; }
+#content, #header, #hero-container,
+#footer-content { width: 960px; margin: auto; }
 #content-left, #content-right { float: left; }
 #content-left { width: 670px; margin-right: 40px;}
 #content-right { width: 250px; }
 
 /* Header */
 #logo { width: 700px; margin-left: -20px; }
-#wires-container { height: 200px; overflow: hidden; position: absolute;
-                   top: 0px; left: 0px; }
-#wires { margin-top: -120px; }
+#hero-container { height: 300px; overflow: hidden; }
 #header-container { background: #000; margin-bottom: 15px; }
 #header-left, #header-right { float: left; margin-bottom: 10px;}
 #header-left { width: 250px; margin-right: 40px; margin-top: 15px;
@@ -35,10 +33,13 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 #header-left a {color: #fff; }
 
 #header-right { width: 670px; }
-#now-playing  {line-height: 1em; }
+#now-playing  { line-height: 1em; }
+
+#header-share {  }
+
 
 /* Nav */
-#nav-container { position: relative; width: 960px; margin: auto; height: 200px;
+#nav-container { position: relative; width: 960px; margin: auto; height: 300px;
                  margin-bottom: 25px; }
 #nav { position: absolute; bottom: 0px; left: 0px; border-bottom: solid 5px #000; }
 #nav a { display: inline-block; margin-right: 10px; background-color: #000;
@@ -51,7 +52,9 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 #content-right #social { margin-top: 15px; }
 
 /* Footer */
-#footer { background-color: #000; padding: 15px; margin-top: 20px; color: #fff; }
+#footer { background-color: #000; margin-top: 20px; color: #fff;
+          position: relative; height: 60px; overflow: hidden; }
+#footer-copyright { position: absolute; top: 15px; left: 10px; }
 .copy-it-right { text-decoration: line-through; }
 
 /* Content area */

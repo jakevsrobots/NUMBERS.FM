@@ -1,0 +1,18 @@
+{% extends "two_col_base.html" %}
+
+{% block hero_image %}
+{% if show.detail_page_image %}
+<img src="{{ show.detail_page_image.url }}" id="hero" />
+{% else %}
+<img src="{{ STATIC_URL }}img/WIRES_002.gif" id="hero" />
+{% endif %}
+{% endblock %}
+
+{% block content_left %}
+<h1>{{ show.name }}</h1>
+{{ show.full_description }}
+{% endblock %}
+
+{% block content_right %}
+<h2>Upcoming broadcasts</h2>
+{% endblock %}

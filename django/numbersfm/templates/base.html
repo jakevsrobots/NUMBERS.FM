@@ -18,6 +18,8 @@
             })();
 
         </script>
+
+        <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'5fd6de97-b902-4828-97a1-01ae102c593e'});</script>        
     </head>
     <body>
 
@@ -47,6 +49,9 @@
                                     <strong>8:07pm - 10:09pm:</strong> Cole Pierce
                                     -->
                             </div>
+                            <div id="header-share">
+                                <span  class="st_twitter" ></span><span  class="st_facebook" ></span><span  class="st_email" ></span>
+                            </div>
                         </div>
 	                </div>
                 </div>
@@ -57,19 +62,11 @@
             </div>
         </div>
 
-        <div id="nav-container">
-            <div id="wires-container">
-	            <img src="{{ STATIC_URL }}img/WIRES_002.gif" id="wires" />
+            <div id="hero-container">
+                {% block hero_image %}
+	            <img src="{{ STATIC_URL }}img/WIRES_002.gif" id="hero" />
+                {% endblock %}
             </div>
-
-            <div id="nav">
-	            <div id="nav-content">
-	                <a href="#">Schedule</a>
-	                <a href="#">How to Listen</a>
-	            </div>
-            </div>
-            
-        </div>
 
         <div id="content">
             {% block content %}
@@ -78,7 +75,9 @@
 
         <div id="footer">
             <div id="footer-content">
-	            <span class="copy-it-right">&copy;</span> Copy-it-right 0AD &mdash; 2012AD
+                <div id="footer-copyright">
+	                <span class="copy-it-right">&copy;</span> Copy-it-right 0AD &mdash; 2012AD
+                </div>
             </div>
         </div>
     </body>
