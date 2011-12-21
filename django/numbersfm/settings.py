@@ -119,7 +119,9 @@ INSTALLED_APPS = (
     'undermythumb',
 
     'core',
-    'radio'
+    'pages',    
+    'radio',
+    'news'    
 )
 
 # A sample logging configuration. The only tangible logging

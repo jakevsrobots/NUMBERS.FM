@@ -8,10 +8,8 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
     url(r'^$', 'core.views.home', name='home'),
-    url(r'', include('radio.urls')),
+    url(r'^radio/', include('radio.urls')),
     
-    # url(r'^numbersfm/', include('numbersfm.foo.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
 )
 

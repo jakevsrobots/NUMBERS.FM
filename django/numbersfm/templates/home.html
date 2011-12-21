@@ -3,5 +3,33 @@
 {% block content_left %}
 <h1>NUMBERS.FM</h1>
 
-<p>NUMBERS.FM is a new (media) online radio station for experimental musics, snd, audio arts && other uncategorizable sonic events.</p>
+{% load page_tags %}
+{% display_page "Home Page Intro Text" %}
+
+<div class="news-post-list">
+    {% for news_post in news_post_list %}
+    <article>
+        <h3>{{ news_post.title }}</h3>
+
+        <div class="text-block">
+            {{ news_post.body|safe|linebreaks }}
+        </div>
+
+        <label>Related Shows:</label>
+        <ul class="related-shows">
+            {% for show in news_post.related_shows.all %}
+            <li>
+                <a href="{{ show.get_absolute_url }}">{{ show.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block content_right %}
+{% display_page "Home Page Sidebar" %}
+
+{{ block.super }}
 {% endblock %}

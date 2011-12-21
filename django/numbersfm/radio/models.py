@@ -5,16 +5,10 @@ from undermythumb.renderers import CropRenderer
 from numbersfm.utils.managers import ActiveManager
 
 
-SHOW_SCHEDULE_TYPES = (
-    (0, 'Single'),
-    (1, 'Recurring')
-)
-
 class Show(models.Model):
     is_active = models.BooleanField(default=True, help_text="If this box is not checked, the show will not appear on the site.")
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
-    schedule_type = models.PositiveIntegerField(choices=SHOW_SCHEDULE_TYPES)
     short_description = models.TextField(blank=True)
     full_description = models.TextField(blank=True)
     

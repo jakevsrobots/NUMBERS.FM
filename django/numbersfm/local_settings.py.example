@@ -25,3 +25,8 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
 )
+
+ICECAST_SERVER = 'http://yourstation.fm:8000'
+ICECAST_ADMIN_USER = 'admin'
+ICECAST_ADMIN_PASSWORD = 'hackme'
+ICECAST_MOUNTPOINT = '/listen'

@@ -23,7 +23,7 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 
 /* Header */
 #logo { width: 700px; margin-left: -20px; }
-#hero-container { height: 300px; overflow: hidden; }
+#hero-container { height: 300px; overflow: hidden; margin-bottom: 15px; }
 #header-container { background: #000; margin-bottom: 15px; }
 #header-left, #header-right { float: left; margin-bottom: 10px;}
 #header-left { width: 250px; margin-right: 40px; margin-top: 15px;
@@ -34,8 +34,6 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 
 #header-right { width: 670px; }
 #now-playing  { line-height: 1em; }
-
-#header-share {  }
 
 
 /* Nav */
