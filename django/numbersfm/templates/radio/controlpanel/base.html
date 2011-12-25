@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}NUMBERS.FM Control Panel{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link href="{{ STATIC_URL }}bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/control-panel.css" rel="stylesheet">
+        <style type="text/css">
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="topbar">
+            <div class="fill">
+                <div class="container">
+                    <a class="brand" href="#">NUMBERS.FM</a>
+                    {% if user.is_authenticated %}
+                    <ul class="nav">
+                        <li class="active"><a href="#">Dashboard</a></li>
+                        <li><a href="#">DJ Manual</a></li>
+                        <li><a href="#">Logs</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li><a href="{% url logout %}" class="pull-right">Sign Out</a></li>
+                    </ul>
+                    {% else %}
+                    <form action="{% url login %}" method="POST" class="pull-right">
+                        {% csrf_token %}
+                        <input class="input-small" type="text" placeholder="Username" name="username">
+                        <input class="input-small" type="password" placeholder="Password" name="password">
+                        <button class="btn" type="submit">Sign in</button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="content">
+                <div class="page-header">
+                    <h1>{% block page_title %}Page name <small>Supporting text or tagline</small>{% endblock %}</h1>
+                </div>
+                <div class="row">
+                    <div class="span10">
+                        {% block content %}
+                        <h2>Main content</h2>
+                        {% endblock %}
+                    </div>
+                    <div class="span4">
+                        {% block sidebar %}
+                        <h3>Secondary content</h3>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>NUMBERS.FM</p>
+            </footer>
+
+        </div>
+
+    </body>
+</html>

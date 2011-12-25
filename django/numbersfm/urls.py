@@ -9,6 +9,7 @@ urlpatterns = patterns(
     '',
     url(r'^$', 'core.views.home', name='home'),
     url(r'^radio/', include('radio.urls')),
+    url(r'^secrets/', include('radio.controlpanel.urls')),
     
     url(r'^admin/', include(admin.site.urls)),
 )

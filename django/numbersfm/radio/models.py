@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from django.db import models
 from django.contrib.auth.models import User
 from undermythumb.fields import ImageWithThumbnailsField, ImageFallbackField
@@ -35,3 +36,40 @@ class Show(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('radio-show-detail', (self.slug,))
+
+class StationStatusUpdate(models.Model):
+    """
+    A snapshot of the current station status:
+    - Live/archives
+    - What show is currently playing.
+    - What song is currently playing.    
+    - When did this change occur.
+    """
+    
+    is_live = models.BooleanField()
+    current_show = models.ForeignKey(Show, blank=True, null=True)
+    current_song = models.CharField(max_length=255, blank=True)
+    timestamp = models.DateTimeField(default=datetime.now)
+
+    objects = StationStatusUpdateManager()
+    
+    class Meta:
+        ordering = ('-timestamp',)
+    
+    def __unicode__(self):
+        return "status update #%s" % self.pk
+
+    def song_duration(self):
+        if self.objects.current_status() == self:
+            return datetime.now() - self.timestamp
+        else:
+            next_update = self.objects.exclude(current_song=self.current_song).filter(timestamp__gt=self.timestamp).order_by('timestamp')[0]
+            return next_update.timestamp - self.timestamp
+
+    def show_duration(self):
+        if self.objects.current_status() == self:
+            last_update = self.objects.exclude(current_show=self.current_show).filter(timestamp__lt=self.timestamp).order_by('-timestamp')[0]
+            return datetime.now() - last_update.timestamp
+        else:
+            next_update = self.objects.exclude(current_show=self.current_show).filter(timestamp__gt=self.timestamp).order_by('timestamp')[0]
+            return next_update.timestamp = self.timestamp
