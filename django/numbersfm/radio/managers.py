@@ -1,5 +1,4 @@
 from django.db.models import Manager
-from models import StationStatusUpdate
 
 
 class StationStatusUpdateManager(Manager):

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from undermythumb.fields import ImageWithThumbnailsField, ImageFallbackField
 from undermythumb.renderers import CropRenderer
 from numbersfm.utils.managers import ActiveManager
+from managers import StationStatusUpdateManager
 
 
 class Show(models.Model):
@@ -59,17 +60,34 @@ class StationStatusUpdate(models.Model):
     def __unicode__(self):
         return "status update #%s" % self.pk
 
+    def get_description(self):
+        if self.is_live:
+            return "%s -- %s" % (self.current_show.name, self.current_song)
+        else:
+            return "[Archive Stream] %s" % self.current_song
+    
     def song_duration(self):
-        if self.objects.current_status() == self:
+        if StationStatusUpdate.objects.current_status() == self:
             return datetime.now() - self.timestamp
         else:
-            next_update = self.objects.exclude(current_song=self.current_song).filter(timestamp__gt=self.timestamp).order_by('timestamp')[0]
+            try:
+                next_update = StationStatusUpdate.objects.exclude(current_song=self.current_song).filter(timestamp__gt=self.timestamp).order_by('timestamp')[0]
+            except IndexError:
+                return None
             return next_update.timestamp - self.timestamp
 
     def show_duration(self):
-        if self.objects.current_status() == self:
-            last_update = self.objects.exclude(current_show=self.current_show).filter(timestamp__lt=self.timestamp).order_by('-timestamp')[0]
+        if StationStatusUpdate.objects.current_status() == self:
+            try:
+                last_update = StationStatusUpdate.objects.exclude(current_show=self.current_show).filter(timestamp__lt=self.timestamp).order_by('-timestamp')[0]
+            except IndexError:
+                return None
+            
             return datetime.now() - last_update.timestamp
         else:
-            next_update = self.objects.exclude(current_show=self.current_show).filter(timestamp__gt=self.timestamp).order_by('timestamp')[0]
-            return next_update.timestamp = self.timestamp
+            try:
+                next_update = StationStatusUpdate.objects.exclude(current_show=self.current_show).filter(timestamp__gt=self.timestamp).order_by('timestamp')[0]
+            except IndexError:
+                return None
+            
+            return next_update.timestamp - self.timestamp

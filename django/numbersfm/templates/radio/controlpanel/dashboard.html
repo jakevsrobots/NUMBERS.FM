@@ -4,7 +4,23 @@
 
 
 {% block content %}
-<h2>Station Status</h2>
+<h4>Now Playing:</h4>
+<p style="margin-bottom: 20px; padding-left: 20px;">
+    {{ current_status.get_description }}
+</p>
+
+
+<h4>Update Status:</h4>
+
+<form class="form-stacked" method="POST" action="">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    
+    <p>
+        <input type="submit" value="Save Changes" class="btn" />
+    </p>
+</form>
 
 {% endblock %}
 
