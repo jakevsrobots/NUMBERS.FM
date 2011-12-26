@@ -1,0 +1,13 @@
+NUMBERS.FM TODO
+---------------
+
+- Fix update status form so it prefills with current status info
+- Make Windows BUTT/config installer
+- Logs page in dashboard
+- Write and include dj manual in dashboard
+- Create mpd archive player to replace ices
+- Write bot to parse google calendar and load into site
+- Scheduling models
+- Asynch broadcast scheduler interface
+- Web-based archive file uploader in dashboard
+- Today's schedule view in dashboard
