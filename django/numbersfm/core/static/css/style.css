@@ -1,27 +1,26 @@
-/* Basic elements */
-body, html { margin: 0; padding: 0; color: #444;
-             font-size: 100%: }
+/* ---- Basic elements ---- */
+body, html { margin: 0; padding: 0; }
 h1, h2, h3, h4 { color: #000; font-family: sans-serif; font-variant: small-caps;
-                 font-weight: bold; margin-bottom: 0.5em; }
-h1 { font-size: 1.5em; }
-h2 { font-size: 1.2em; }
-h3, h4 { font-size: 1em; }
+                 font-weight: bold; margin-bottom: 18px; }
+h1 { font-size: 36px; }
+h2 { font-size: 24px; }
+h3, h4 { font-size: 18px; }
 h4 { font-weight: normal; }
 body { font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif;
-       line-height: 1.6em; font-size: 18px;  }
+       line-height: 28px; font-size: 16px; color: #444; }
 .clear { clear: both; }
-p { margin-bottom: 2em; }
+p { margin-bottom: 20px; }
 .block { padding: 20px; }
 a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 
-/* Layout */
+/* ---- Layout ---- */
 #content, #header, #hero-container,
 #footer-content { width: 960px; margin: auto; }
 #content-left, #content-right { float: left; }
 #content-left { width: 670px; margin-right: 40px;}
 #content-right { width: 250px; }
 
-/* Header */
+/* ---- Header ---- */
 #logo { width: 700px; margin-left: -20px; }
 #hero-container { height: 300px; overflow: hidden; margin-bottom: 15px; }
 #header-container { background: #000; margin-bottom: 15px; }
@@ -33,10 +32,9 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 #header-left a {color: #fff; }
 
 #header-right { width: 670px; }
-#now-playing  { line-height: 1em; }
+#now-playing  { line-height: 16px; }
 
-
-/* Nav */
+/* ---- Nav ---- */
 #nav-container { position: relative; width: 960px; margin: auto; height: 300px;
                  margin-bottom: 25px; }
 #nav { position: absolute; bottom: 0px; left: 0px; border-bottom: solid 5px #000; }
@@ -46,17 +44,27 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
          padding-top: 2px; padding-bottom: 2px; }
 #nav a:hover { color: #000; background-color: #fff; }
 
-/* Sidebar */
+/* ---- Sidebar ---- */
 #content-right #social { margin-top: 15px; }
+.show-list a { color: #999; }
+.show-list a.active-show { font-weight: bold; color: #000; }
 
-/* Footer */
+/* ---- Footer ---- */
 #footer { background-color: #000; margin-top: 20px; color: #fff;
           position: relative; height: 60px; overflow: hidden; }
 #footer-copyright { position: absolute; top: 15px; left: 10px; }
 .copy-it-right { text-decoration: line-through; }
 
-/* Content area */
-
+/* ---- Content area ---- */
 #content { min-height: 500px; }
 #content a, #content a:hover { margin-right: 0px; }
 #content-right ul {font-size: 14px; }
+
+/* ---- Home ---- */
+.home .page-fragment { font-size: 24px; line-height: 36px; margin-bottom: 40px;  }
+
+/* ---- News ---- */
+.news-post-list article { border-bottom: dashed 1px #000; margin-bottom: 20px; }
+.news-post-list article h3 { font-size: 24px; margin-bottom: 0px;}
+.news-post-list article h4 { font-size: 14px; text-transform: lowercase; font-variant: normal;
+                             color: #999; }

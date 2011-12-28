@@ -1,7 +1,7 @@
 <ul class="show-list">
     {% for show in shows %}
     <li>
-        <a href="{{ show.get_absolute_url }}">{{ show.name }}</a>
+        <a href="{{ show.get_absolute_url }}" {% if show.is_active %}class="active-show"{% endif %}>{{ show.name }}</a>
     </li>
     {% endfor %}
 </ul>

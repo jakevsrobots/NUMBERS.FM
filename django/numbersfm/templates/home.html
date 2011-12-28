@@ -1,8 +1,8 @@
 {% extends "two_col_base.html" %}
 
-{% block content_left %}
-<h1>NUMBERS.FM</h1>
+{% block bodyclass %}home{% endblock %}
 
+{% block content_left %}
 {% load page_tags %}
 {% display_page "Home Page Intro Text" %}
 
@@ -10,11 +10,13 @@
     {% for news_post in news_post_list %}
     <article>
         <h3>{{ news_post.title }}</h3>
+        <h4>Posted {{ news_post.date_published|timesince }} ago</h4>
 
         <div class="text-block">
             {{ news_post.body|safe|linebreaks }}
         </div>
 
+        {% if news_post.related_shows.count %}
         <label>Related Shows:</label>
         <ul class="related-shows">
             {% for show in news_post.related_shows.all %}
@@ -23,6 +25,7 @@
             </li>
             {% endfor %}
         </ul>
+        {% endif %}
     </article>
     {% endfor %}
 </div>

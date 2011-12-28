@@ -6,4 +6,8 @@ register = template.Library()
 
 @register.inclusion_tag('radio/show_list_fragment.html')
 def list_shows():
+    return {'shows': Show.objects.all()}
+
+@register.inclusion_tag('radio/show_list_fragment.html')
+def list_active_shows():
     return {'shows': Show.objects.active()}
