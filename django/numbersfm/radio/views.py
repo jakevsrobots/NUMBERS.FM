@@ -3,4 +3,4 @@ from models import Show
 
 
 class ShowDetailView(DetailView):
-    queryset = Show.objects.active()
+    queryset = Show.objects.all()
