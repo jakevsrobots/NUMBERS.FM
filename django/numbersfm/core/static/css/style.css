@@ -6,7 +6,7 @@ h1 { font-size: 36px; }
 h2 { font-size: 24px; }
 h3, h4 { font-size: 18px; }
 h4 { font-weight: normal; }
-body { font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif;
+body { font-family: Palatino, Times, sans-serif;
        line-height: 28px; font-size: 16px; color: #444; }
 .clear { clear: both; }
 p { margin-bottom: 20px; }
@@ -50,9 +50,10 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 .show-list a.active-show { font-weight: bold; color: #000; }
 
 /* ---- Footer ---- */
+#footer-content { width: 960px; margin: auto; }
 #footer { background-color: #000; margin-top: 20px; color: #fff;
           position: relative; height: 60px; overflow: hidden; }
-#footer-copyright { position: absolute; top: 15px; left: 10px; }
+#footer-copyright { margin-top: 15px; }
 .copy-it-right { text-decoration: line-through; }
 
 /* ---- Content area ---- */
