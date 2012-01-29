@@ -4,7 +4,7 @@ from views import ShowDetailView
 
 urlpatterns = patterns(
     '',
-    url(r'^shows/(?P<slug>[-_\w]+)/$', ShowDetailView.as_view(
+    url(r'^~(?P<slug>[-_\w]+)/$', ShowDetailView.as_view(
             template_name='radio/show_detail.html',
             context_object_name='show'
             ),

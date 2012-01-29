@@ -22,7 +22,8 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 
 /* ---- Header ---- */
 #logo { width: 700px; margin-left: -20px; }
-#hero-container { height: 300px; overflow: hidden; margin-bottom: 15px; }
+#hero-container { height: 300px; overflow: hidden; margin-bottom: 15px;
+                  position: relative; }
 #header-container { background: #000; margin-bottom: 15px; }
 #header-left, #header-right { float: left; margin-bottom: 10px;}
 #header-left { width: 250px; margin-right: 40px; margin-top: 15px;
@@ -35,13 +36,13 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 #now-playing  { line-height: 16px; }
 
 /* ---- Nav ---- */
-#nav-container { position: relative; width: 960px; margin: auto; height: 300px;
-                 margin-bottom: 25px; }
-#nav { position: absolute; bottom: 0px; left: 0px; border-bottom: solid 5px #000; }
+#nav { position: absolute; bottom: 0px; left: 0px; border-bottom: solid 5px #000;
+       width: 100%; }
 #nav a { display: inline-block; margin-right: 10px; background-color: #000;
          color: #fff; text-decoration: none; padding: 10px;
-         font-variant: small-caps; font-family: sans-serif;
+         font-variant: small-caps; font-family: sans-serif; text-transform: lowercase;
          padding-top: 2px; padding-bottom: 2px; }
+#nav a:first-child { margin-left: 10px; }
 #nav a:hover { color: #000; background-color: #fff; }
 
 /* ---- Sidebar ---- */
@@ -62,7 +63,8 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 #content-right ul {font-size: 14px; }
 
 /* ---- Home ---- */
-.home .page-fragment { font-size: 24px; line-height: 36px; margin-bottom: 40px;  }
+.home .page-fragment { font-size: 24px; line-height: 36px; }
+.home-schedule { margin-bottom: 40px; }
 
 /* ---- News ---- */
 .news-post-list article { border-bottom: dashed 1px #000; margin-bottom: 20px; }

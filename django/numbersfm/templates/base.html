@@ -32,12 +32,12 @@
                             <div id="ffmp3">
                                 <!-- BEGINS: AUTO-GENERATED FFMP3 CODE -->
                                 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="220" height="21" bgcolor="#FFFFFF">
-                                    <param name="movie" value="/ffmp3/ffmp3.swf" />
+                                    <param name="movie" value="{{ STATIC_URL }}ffmp3/ffmp3.swf" />
                                     <param name="flashvars" value="url=http://numbers.fm:8000/listen&lang=en&codec=mp3&volume=100&traking=true&jsevents=true&buffering=5&title=NUMBERS.FM" />
                                     <param name="wmode" value="window" />
                                     <param name="allowscriptaccess" value="always" />
                                     <param name="scale" value="noscale" />
-                                    <embed src="/ffmp3/ffmp3.swf" flashvars="url=http://numbers.fm:8000/listen&lang=en&codec=mp3&volume=100&traking=true&jsevents=true&buffering=5&title=NUMBERS.FM" width="220" scale="noscale" height="21" wmode="window" bgcolor="#FFFFFF" allowscriptaccess="always" type="application/x-shockwave-flash" />
+                                    <embed src="{{ STATIC_URL }}ffmp3/ffmp3.swf" flashvars="url=http://numbers.fm:8000/listen&lang=en&codec=mp3&volume=100&traking=true&jsevents=true&buffering=5&title=NUMBERS.FM" width="220" scale="noscale" height="21" wmode="window" bgcolor="#FFFFFF" allowscriptaccess="always" type="application/x-shockwave-flash" />
                                 </object>
                                 <!-- ENDS: AUTO-GENERATED FFMP3 CODE -->
                             </div>
@@ -61,12 +61,20 @@
             </div>
         </div>
 
-            <div id="hero-container">
-                {% block hero_image %}
-	            <img src="{{ STATIC_URL }}img/WIRES_002.gif" id="hero" />
-                {% endblock %}
-            </div>
+        <div id="hero-container">
+            {% block hero_image %}
+	        <img src="{{ STATIC_URL }}img/WIRES_002.gif" id="hero" />
+            {% endblock %}
 
+            <div id="nav">
+                <a href="/">Home</a>
+                {% comment %}
+                <a href="/schedule/">Schedule</a>
+                <a href="/about/">About</a>
+                {% endcomment %}
+            </div>
+        </div>
+        
         <div id="content">
             {% block content %}
             {% endblock %}
