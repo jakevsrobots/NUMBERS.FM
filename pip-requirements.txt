@@ -1,12 +1,15 @@
 Django==1.3.1
+Flask==0.8
+Jinja2==2.6
 MySQL-python==1.2.3
 PIL==1.1.7
 South==0.7.3
+Werkzeug==0.8.1
 distribute==0.6.24
 django-undermythumb==0.2.3
+-e git+git@github.com:jakevsrobots/Flatmate.git@f3f35ef286ca01dceab0e1658817f324917717c2#egg=flatmate-dev
 ipython==0.11
 mutagen==1.20
-pyglet==1.1.4
 requests==0.8.6
 virtualenv==1.5.1
 virtualenvwrapper==2.6.1
