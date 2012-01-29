@@ -8,7 +8,7 @@ from managers import StationStatusUpdateManager
 
 
 class Show(models.Model):
-    is_active = models.BooleanField(default=True, help_text="If this box is not checked, the show will not appear on the site.")
+    is_active = models.BooleanField(default=True, help_text="If this box is not checked, the show will still appear, but it will be listed as 'inactive'.")
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     short_description = models.TextField(blank=True)

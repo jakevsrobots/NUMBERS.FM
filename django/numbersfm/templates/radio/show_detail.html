@@ -10,5 +10,8 @@
 
 {% block content_left %}
 <h1>{{ show.name }}</h1>
-{{ show.full_description }}
+{% if not show.is_active %}
+<div class="note">(This show is currently not active -- maybe it just hasn't started yet)</div>
+{% endif %}
+{{ show.full_description|safe|linebreaks }}
 {% endblock %}

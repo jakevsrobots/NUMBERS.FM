@@ -12,6 +12,7 @@ body { font-family: Palatino, Times, sans-serif;
 p { margin-bottom: 20px; }
 .block { padding: 20px; }
 a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
+.note { font-style: italic; color: #666; }
 
 /* ---- Layout ---- */
 #content, #header, #hero-container,
