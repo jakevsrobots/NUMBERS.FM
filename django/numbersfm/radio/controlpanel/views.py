@@ -5,7 +5,7 @@ from radio.models import StationStatusUpdate
 from forms import StationStatusUpdateForm
 
 
-@user_passes_test(lambda u: u.is_staff, login_url='/secrets/login/')
+@user_passes_test(lambda u: u.is_active, login_url='/secrets/login/')
 def dashboard(request):
     current_status = StationStatusUpdate.objects.current_status()
 

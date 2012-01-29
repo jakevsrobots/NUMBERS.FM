@@ -9,4 +9,6 @@ urlpatterns = patterns(
             context_object_name='show'
             ),
         name='radio-show-detail'),
+
+    url(r'^test/$', 'radio.views.test')
 )

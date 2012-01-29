@@ -15,7 +15,7 @@ class Show(models.Model):
     full_description = models.TextField(blank=True)
     
     # images
-    image = ImageWithThumbnailsField(max_length=255, upload_to='shows/',
+    image = ImageWithThumbnailsField(max_length=255, blank=True, upload_to='shows/',
                                      thumbnails=(('detail_page_image', CropRenderer(960, 300)),
                                                  ('thumb_image', CropRenderer(240, 240))),
                                      help_text='This image should be at least 960 pixels wide.')
