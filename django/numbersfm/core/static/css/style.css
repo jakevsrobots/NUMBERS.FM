@@ -11,7 +11,8 @@ body { font-family: Palatino, Times, sans-serif;
 .clear { clear: both; }
 p { margin-bottom: 20px; }
 .block { padding: 20px; }
-a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
+a { color: #000; }
+a:hover { color: #fff; background-color: #000; text-decoration: none; }
 .note { font-style: italic; color: #666; }
 
 /* ---- Layout ---- */
@@ -48,8 +49,11 @@ a, a:hover { color: #000; display: inline-block; margin-right: 10px; }
 
 /* ---- Sidebar ---- */
 #content-right #social { margin-top: 15px; }
-.show-list a { color: #999; }
+.show-list { line-height: 18px; }
+.show-list li { margin-bottom: 5px; }
+.show-list a { color: #999; font-size: 12px; }
 .show-list a.active-show { font-weight: bold; color: #000; }
+.show-list a:hover { color: #fff; }
 
 /* ---- Footer ---- */
 #footer-content { width: 960px; margin: auto; }
