@@ -16,12 +16,12 @@ class Show(models.Model):
     
     # images
     image = ImageWithThumbnailsField(max_length=255, blank=True, upload_to='shows/',
-                                     thumbnails=(('detail_page_image', CropRenderer(960, 300)),
+                                     thumbnails=(('detail_page_image', CropRenderer(960, 296)),
                                                  ('thumb_image', CropRenderer(240, 240))),
                                      help_text='This image should be at least 960 pixels wide.')
     detail_page_image = ImageFallbackField(fallback_path='image.thumbnails.detail_page_image',
                                            upload_to='shows/',
-                                           help_text='Optional override for detail page image crop. 960x196')
+                                           help_text='Optional override for detail page image crop. 960x296')
     thumb_image = ImageFallbackField(fallback_path='image.thumbnails.thumb_image',
                                            upload_to='shows/',
                                            help_text='Optional override for thumbnail image crop. 240x240')

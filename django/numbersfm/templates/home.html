@@ -26,7 +26,7 @@
         <ul class="related-shows">
             {% for show in news_post.related_shows.all %}
             <li>
-                <a href="{{ show.get_absolute_url }}">{{ show.title }}</a>
+                <a href="{{ show.get_absolute_url }}">{{ show.name }}</a>
             </li>
             {% endfor %}
         </ul>

@@ -76,3 +76,6 @@ a:hover { color: #fff; background-color: #000; text-decoration: none; }
 .news-post-list article h3 { font-size: 24px; margin-bottom: 0px;}
 .news-post-list article h4 { font-size: 14px; text-transform: lowercase; font-variant: normal;
                              color: #999; }
+.news-post-list .related-shows, .news-post-list .related-shows li { list-style-type: none; display: inline; }
+.related-shows li:after { content:"," }
+.related-shows li:last-child:after { content: ""; }
