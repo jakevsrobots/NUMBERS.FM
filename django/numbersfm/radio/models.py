@@ -38,6 +38,14 @@ class Show(models.Model):
     def get_absolute_url(self):
         return ('radio-show-detail', (self.slug,))
 
+class ShowArchive(models.Model):
+    show = models.ForeignKey(Show)
+    title = models.CharField(max_length=255)
+    mp3 = models.FilePathField(path='/opt/mp3', max_length=255)
+
+    def __unicode__(self):
+        return self.title
+    
 class StationStatusUpdate(models.Model):
     """
     A snapshot of the current station status:
