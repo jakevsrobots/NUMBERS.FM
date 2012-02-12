@@ -79,3 +79,10 @@ a:hover { color: #fff; background-color: #000; text-decoration: none; }
 .news-post-list .related-shows, .news-post-list .related-shows li { list-style-type: none; display: inline; }
 .related-shows li:after { content:"," }
 .related-shows li:last-child:after { content: ""; }
+
+/* ---- Show detail ---- */
+.archives h4 { margin-bottom: 2px; }
+.archives ul, .archives li { list-style-type: square; }
+.archives li { margin-left: 15px; }
+.archives li a { display: block; }
+.archives li a:hover { background: transparent; text-decoration: none; color: #000; }

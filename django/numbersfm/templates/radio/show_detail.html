@@ -13,5 +13,19 @@
 {% if not show.is_active %}
 <div class="note">(This show is currently not active -- maybe it just hasn't started yet)</div>
 {% endif %}
-{{ show.full_description|safe|linebreaks }}
+
+<div class="show-description">
+  {{ show.full_description|safe|linebreaks }}
+</div>
+
+{% if show.archives.count %}
+<div class="archives">
+  <h4>Archives:</h4>
+  <ul>
+    {% for archive in show.archives.all %}
+    <li><a class="audio" href="{{ archive.get_mp3_url }}">{{ archive.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
 {% endblock %}

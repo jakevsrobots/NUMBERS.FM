@@ -39,9 +39,9 @@ class Show(models.Model):
         return ('radio-show-detail', (self.slug,))
 
 class ShowArchive(models.Model):
-    show = models.ForeignKey(Show)
+    show = models.ForeignKey(Show, related_name='archives')
     title = models.CharField(max_length=255)
-    mp3 = models.FilePathField(path='/opt/mp3', max_length=255)
+    mp3 = models.FilePathField(path='/opt/mp3', max_length=255, blank=True)
     ordering = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -49,6 +49,9 @@ class ShowArchive(models.Model):
     
     def __unicode__(self):
         return self.title
+
+    def get_mp3_url(self):
+        return self.mp3.replace('/opt/mp3','/archives')
     
 class StationStatusUpdate(models.Model):
     """
