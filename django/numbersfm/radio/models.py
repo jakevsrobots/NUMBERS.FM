@@ -42,7 +42,11 @@ class ShowArchive(models.Model):
     show = models.ForeignKey(Show)
     title = models.CharField(max_length=255)
     mp3 = models.FilePathField(path='/opt/mp3', max_length=255)
+    ordering = models.PositiveIntegerField(default=0)
 
+    class Meta:
+        ordering = ('ordering',)
+    
     def __unicode__(self):
         return self.title
     
